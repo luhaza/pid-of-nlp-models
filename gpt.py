@@ -6,7 +6,7 @@ client = OpenAI()
 models = ["gpt-4", "gpt-4o", "gpt-4o-mini"]
 
 
-file = "data/IBC/ibc.csv"
+file = "data/IBC/sample_ibc.csv"
 data = shuffle(pd.read_csv(file))
 
 sentences = data['sentence']
