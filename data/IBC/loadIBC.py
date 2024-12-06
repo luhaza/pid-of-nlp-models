@@ -2,7 +2,7 @@ import _pickle as cPickle
 import pandas as pd
 
 if __name__ == '__main__':
-    [lib, con, neutral] = cPickle.load(open('sampleData.pkl', 'rb'))
+    [lib, con, neutral] = cPickle.load(open('ibcData.pkl', 'rb'))
 
     data = pd.DataFrame(columns=["sentence", "label"])
     index = 0
@@ -38,4 +38,4 @@ if __name__ == '__main__':
                     if not full_tree:
                         break
             
-    data.to_csv("sample_ibc.csv")
+    data.to_csv("ibc.csv", index=False)
