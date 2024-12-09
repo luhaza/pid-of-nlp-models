@@ -1,8 +1,11 @@
 import pandas as pd
 from sklearn.utils import shuffle
+import os
 
-full_file = "data/IBC/ibc.csv"
-sample_file = "data/IBC/sample_ibc.csv"
+current_dir = os.path.dirname(os.path.abspath(__file__))
+full_file = os.path.join(current_dir, "IBC", "ibc.csv")
+sample_file = os.path.join(current_dir, "IBC", "sample_ibc.csv")
+
 ibc = pd.read_csv(full_file)
 sample = pd.read_csv(sample_file)
 
