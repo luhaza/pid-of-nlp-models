@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/shared/26ry5/pid-of-nlp-models/models/Llama/instructiontuning.py", line 7, in <module>
+    from transformers import AutoTokenizer, AutoModelForCausalLM, Trainer, TrainingArguments
+ModuleNotFoundError: No module named 'transformers'
