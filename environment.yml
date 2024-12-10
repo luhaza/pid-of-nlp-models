@@ -1,0 +1,32 @@
+name: cs375
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy=1.26.4
+  - matplotlib=3.9.2
+  - scikit-learn=1.5.1
+  - spacy=3.7.2
+  - nltk=3.9.1
+  - gensim=4.3.3
+  - pytorch=2.3.0
+  - pytorch-cpu=2.3.0
+  - transformers=4.44.1
+  - jupyter=1.0.0
+  - jupyter_client<7.0.0
+  - nb_conda=2.2.1
+  - datasets=2.5.2  # For 'from datasets import Dataset' and 'load_dataset'
+  - torchmetrics=0.11.0  # For metrics calculation like accuracy, precision, etc.
+  - scikit-learn=1.5.1  # For 'train_test_split' and metrics
+  - pandas=2.1.0  # For DataFrame operations and manipulation
+  - typing-extensions=4.5.0  # To use typing for type hints
+  - accelerate=0.20.0  # To help optimize model training on GPUs
+  - tqdm=4.66.0  # Progress bar (commonly used in training loops)
+  - transformers[torch]  # This is optional but useful to ensure compatibility with torch
+  - evaluate=0.4.0  # For the evaluate library
+
+  # Add any additional libraries you might need
+  - pip:
+      - datasets  # To install latest version via pip if conda version is outdated
+ 
