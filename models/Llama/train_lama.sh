@@ -17,7 +17,7 @@ module load cudnn/8.1                   # Adjust cuDNN version if needed
 # source activate your_conda_env  # Replace 'your_conda_env' with your Conda environment name
 
 # Navigate to the directory where the script is located (optional if already in correct directory)
-cd /path/to/your/script/  # Change this path to where `instructiontuning.py` is located
+# cd /path/to/your/script/  # Change this path to where `instructiontuning.py` is located
 
 # Run the Python training script
 python instructiontuning.py  # This will run your instruction-tuning training script
