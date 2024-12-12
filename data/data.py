@@ -21,6 +21,11 @@ conservative = ft_ibc.loc[ft_ibc['label'] == "Conservative"].head(1250)
 liberal = ft_ibc.loc[ft_ibc['label'] == "Liberal"].head(1250)
 neutral = ft_ibc.loc[ft_ibc['label'] == "Neutral"].head(500)
 
+eval_con = ft_ibc.loc[ft_ibc['label'] == "Conservative"].tail(375)
+eval_lib = ft_ibc.loc[ft_ibc['label'] == "Liberal"].head(375)
+
+evaluation = shuffle(pd.concat([eval_con, eval_lib]), random_state=3)
+
 train_data = shuffle(pd.concat([conservative, liberal, neutral]), random_state=2)
 
 options = ["liberal", "neutral", "conservative"]
@@ -48,6 +53,13 @@ dataset = []
 for index in range(len(train_data)):
     sentence = train_data.iloc[index]["sentence"]
     add_to_dataset(dataset, sentence, train_data.iloc[index]["label"].lower())
+
+evaluation_dataset = []
+
+for index in range(len(evaluation)):
+    sentence = evaluation.iloc[index]["sentence"]
+    add_to_dataset(evaluation_dataset, sentence, evaluation.iloc[index]["label"].lower())
+
 
 test_split = (int) (0.2*len(dataset))
 test_set = dataset[:test_split]
